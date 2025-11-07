@@ -1,105 +1,182 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Sparkles, Truck, Shield } from "lucide-react";
-import shopHeroBg from "@/assets/shop-hero-bg.jpg";
+import { Truck, Shield, Gift } from "lucide-react";
+import shopCleanBg from "@/assets/shop-clean-bg.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={shopHeroBg} 
-          alt="Shopping Background" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/85 to-secondary/80" />
-      </div>
-      
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-pulse delay-1000" />
-      </div>
+    <>
+      {/* Main Hero Section */}
+      <section className="relative min-h-[70vh] flex items-center justify-center pt-20 overflow-hidden bg-gradient-to-br from-background via-muted/30 to-background">
+        {/* Background */}
+        <div className="absolute inset-0 z-0 opacity-40">
+          <img 
+            src={shopCleanBg} 
+            alt="Background" 
+            className="w-full h-full object-cover"
+          />
+        </div>
 
-      <div className="container mx-auto px-4 z-10 relative">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="text-white">
-            <div className="mb-6 animate-fade-in">
-              <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 border border-white/30 rounded-full text-white text-sm font-semibold backdrop-blur-sm">
-                <Sparkles className="w-4 h-4" />
-                New Collection 2024
-              </span>
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in-up">
-              Discover Your
-              <br />
-              <span className="bg-gradient-to-r from-white via-accent to-white bg-clip-text text-transparent">
-                Perfect Style
-              </span>
+        <div className="container mx-auto px-4 z-10 relative">
+          <div className="max-w-4xl mx-auto text-center">
+            {/* Main Headline */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight animate-fade-in">
+              Your Shopping Journey Begins @ ShopHub.
             </h1>
             
-            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-lg leading-relaxed animate-fade-in-up animation-delay-200">
-              Explore our curated collection of premium products. Quality meets affordability in every purchase.
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
+              India's Premier Online Store Specializing in Fashion, Electronics, Home & Living, Beauty Products, Sports Equipment & Lifestyle Essentials.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in-up animation-delay-400">
-              <Button size="lg" variant="hero" className="group shadow-xl">
-                Shop Now
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-              <Button size="lg" variant="heroOutline" className="shadow-xl">
-                View Collections
+            {/* CTA Button */}
+            <div className="mb-16 animate-fade-in-up animation-delay-400">
+              <Button size="lg" className="px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl">
+                Start Shopping
               </Button>
             </div>
 
-            {/* Features */}
-            <div className="grid grid-cols-3 gap-4 animate-fade-in-up animation-delay-600">
-              <div className="text-center">
-                <Truck className="w-6 h-6 mx-auto mb-2 text-accent" />
-                <p className="text-sm font-semibold">Free Shipping</p>
-                <p className="text-xs text-white/70">On orders $50+</p>
+            {/* Feature Highlights */}
+            <div className="flex flex-wrap justify-center gap-8 text-sm md:text-base animate-fade-in-up animation-delay-600">
+              <div className="flex items-center gap-2">
+                <Truck className="w-5 h-5 text-primary" />
+                <span className="font-semibold text-foreground">Free Delivery</span>
+                <span className="text-muted-foreground">On Orders Above ₹999</span>
               </div>
-              
-              <div className="text-center">
-                <Shield className="w-6 h-6 mx-auto mb-2 text-accent" />
-                <p className="text-sm font-semibold">Secure Payment</p>
-                <p className="text-xs text-white/70">100% Protected</p>
+              <div className="flex items-center gap-2">
+                <Shield className="w-5 h-5 text-primary" />
+                <span className="font-semibold text-foreground">100% Secure</span>
+                <span className="text-muted-foreground">Payment Gateway</span>
               </div>
-              
-              <div className="text-center">
-                <Sparkles className="w-6 h-6 mx-auto mb-2 text-accent" />
-                <p className="text-sm font-semibold">Premium Quality</p>
-                <p className="text-xs text-white/70">Guaranteed</p>
+              <div className="flex items-center gap-2">
+                <Gift className="w-5 h-5 text-primary" />
+                <span className="font-semibold text-foreground">Exclusive Deals</span>
+                <span className="text-muted-foreground">For Members</span>
               </div>
-            </div>
-          </div>
-
-          {/* Right Content - Featured Product Cards */}
-          <div className="hidden lg:grid grid-cols-2 gap-4 animate-fade-in animation-delay-400">
-            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 cursor-pointer">
-              <div className="aspect-square bg-white/20 rounded-2xl mb-4" />
-              <h3 className="text-white font-bold text-lg mb-1">Premium Collection</h3>
-              <p className="text-white/70 text-sm mb-3">Starting at $99</p>
-              <Button variant="heroOutline" size="sm" className="w-full">
-                Explore
-              </Button>
-            </div>
-            
-            <div className="bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105 cursor-pointer mt-8">
-              <div className="aspect-square bg-white/20 rounded-2xl mb-4" />
-              <h3 className="text-white font-bold text-lg mb-1">Trending Now</h3>
-              <p className="text-white/70 text-sm mb-3">Hot Deals</p>
-              <Button variant="heroOutline" size="sm" className="w-full">
-                View All
-              </Button>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Category Cards Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            {/* Fashion Category */}
+            <div className="group relative bg-gradient-to-br from-pink-100 to-pink-200 rounded-3xl p-8 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer">
+              <div className="absolute top-4 right-4 w-32 h-32 bg-white/20 rounded-full blur-2xl" />
+              <div className="relative z-10">
+                <div className="w-24 h-24 bg-white/40 rounded-2xl mb-6 flex items-center justify-center">
+                  <span className="text-4xl">👗</span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  Fashion & Apparel
+                </h3>
+                <p className="text-gray-700 mb-6">
+                  Discover the latest trends in clothing, footwear, and accessories for every style and occasion.
+                </p>
+                <Button variant="default" className="bg-gray-900 text-white hover:bg-gray-800">
+                  Shop Now
+                </Button>
+              </div>
+            </div>
+
+            {/* Electronics Category */}
+            <div className="group relative bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl p-8 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer">
+              <div className="absolute top-4 right-4 w-32 h-32 bg-white/20 rounded-full blur-2xl" />
+              <div className="relative z-10">
+                <div className="w-24 h-24 bg-white/40 rounded-2xl mb-6 flex items-center justify-center">
+                  <span className="text-4xl">📱</span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  Electronics & Gadgets
+                </h3>
+                <p className="text-gray-700 mb-6">
+                  Explore cutting-edge smartphones, laptops, and smart devices with the best deals online.
+                </p>
+                <Button variant="default" className="bg-gray-900 text-white hover:bg-gray-800">
+                  Shop Now
+                </Button>
+              </div>
+            </div>
+
+            {/* Home & Living Category */}
+            <div className="group relative bg-gradient-to-br from-purple-100 to-purple-200 rounded-3xl p-8 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer">
+              <div className="absolute top-4 right-4 w-32 h-32 bg-white/20 rounded-full blur-2xl" />
+              <div className="relative z-10">
+                <div className="w-24 h-24 bg-white/40 rounded-2xl mb-6 flex items-center justify-center">
+                  <span className="text-4xl">🏠</span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  Home & Living
+                </h3>
+                <p className="text-gray-700 mb-6">
+                  Transform your space with premium furniture, decor, and essentials for modern living.
+                </p>
+                <Button variant="default" className="bg-gray-900 text-white hover:bg-gray-800">
+                  Shop Now
+                </Button>
+              </div>
+            </div>
+
+            {/* Beauty Category */}
+            <div className="group relative bg-gradient-to-br from-amber-100 to-amber-200 rounded-3xl p-8 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer">
+              <div className="absolute top-4 right-4 w-32 h-32 bg-white/20 rounded-full blur-2xl" />
+              <div className="relative z-10">
+                <div className="w-24 h-24 bg-white/40 rounded-2xl mb-6 flex items-center justify-center">
+                  <span className="text-4xl">💄</span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  Beauty & Personal Care
+                </h3>
+                <p className="text-gray-700 mb-6">
+                  Pamper yourself with premium skincare, cosmetics, and wellness products for every need.
+                </p>
+                <Button variant="default" className="bg-gray-900 text-white hover:bg-gray-800">
+                  Shop Now
+                </Button>
+              </div>
+            </div>
+
+            {/* Sports Category */}
+            <div className="group relative bg-gradient-to-br from-green-100 to-green-200 rounded-3xl p-8 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer">
+              <div className="absolute top-4 right-4 w-32 h-32 bg-white/20 rounded-full blur-2xl" />
+              <div className="relative z-10">
+                <div className="w-24 h-24 bg-white/40 rounded-2xl mb-6 flex items-center justify-center">
+                  <span className="text-4xl">⚽</span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  Sports & Fitness
+                </h3>
+                <p className="text-gray-700 mb-6">
+                  Gear up for your active lifestyle with quality sports equipment and fitness essentials.
+                </p>
+                <Button variant="default" className="bg-gray-900 text-white hover:bg-gray-800">
+                  Shop Now
+                </Button>
+              </div>
+            </div>
+
+            {/* Lifestyle Category */}
+            <div className="group relative bg-gradient-to-br from-rose-100 to-rose-200 rounded-3xl p-8 overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer">
+              <div className="absolute top-4 right-4 w-32 h-32 bg-white/20 rounded-full blur-2xl" />
+              <div className="relative z-10">
+                <div className="w-24 h-24 bg-white/40 rounded-2xl mb-6 flex items-center justify-center">
+                  <span className="text-4xl">✨</span>
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  Lifestyle & Accessories
+                </h3>
+                <p className="text-gray-700 mb-6">
+                  Complete your look with trending bags, watches, jewelry, and lifestyle essentials.
+                </p>
+                <Button variant="default" className="bg-gray-900 text-white hover:bg-gray-800">
+                  Shop Now
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 
